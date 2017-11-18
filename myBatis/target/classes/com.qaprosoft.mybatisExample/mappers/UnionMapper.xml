@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.qaprosoft.mybatisExample.dao.mysql.interfaces.UnionMapper">
+<mapper namespace="com.qaprosoft.mybatisExample.interfaces.UnionMapper">
 
-    <insert id="createUnion"  useGeneratedKeys="true" keyProperty="id">
+    <insert id="createUnion" parameterType="com.qaprosoft.mybatisExample.model.Union" useGeneratedKeys="true" keyProperty="id">
         <![CDATA[
         insert into world.UNIONS (UNION_NAME) values
         (
@@ -13,72 +13,72 @@
     </insert>
 
 
-    <!--<insert id="insertUnions" parameterType="Union" useGeneratedKeys="true" >-->
-        <!--<![CDATA[-->
-        <!--insert into world.UNIONS (UNION_NAME) values-->
-        <!--]]>-->
-        <!--<foreach item="union" collection="list" separator=",">-->
-            <!--(#{union.name})-->
-        <!--</foreach>-->
-    <!--</insert>-->
+    <insert id="createUnions" parameterType="com.qaprosoft.mybatisExample.model.Union" useGeneratedKeys="true" >
+        <![CDATA[
+        insert into world.UNIONS (UNION_NAME) values
+        ]]>
+        <foreach item="union" collection="list" separator=",">
+            (#{union.name})
+        </foreach>
+    </insert>
 
 
 
 
-    <!--<sql id="getUnion">-->
-        <!--<![CDATA[-->
-        <!--SELECT U.UNION_ID, U.UNION_NAME FROM world.UNIONS U-->
-		<!--]]>-->
-    <!--</sql>-->
+    <sql id="getUnion">
+        <![CDATA[
+        SELECT U.UNION_ID, U.UNION_NAME FROM world.UNIONS U
+		]]>
+    </sql>
 
 
-    <!--<select id="getUnionById" resultMap="UnionResultMap">-->
-        <!--<include refid="getUnion" />-->
-        <!--<![CDATA[-->
-			 <!--WHERE U.UNION_ID = #{id};-->
-		<!--]]>-->
-    <!--</select>-->
-
-
-
-
-
-    <!--<update id="updateUnionName">-->
-        <!--<![CDATA[-->
-			<!--UPDATE-->
-			    <!--world.UNIONS-->
-			    <!--SET-->
-			    <!--UNION_NAME = #{name}-->
-			    <!--WHERE UNION_ID = #{id}-->
-		<!--]]>-->
-    <!--</update>-->
+    <select id="getUnionById" resultMap="UnionResultMap">
+        <include refid="getUnion" />
+        <![CDATA[
+			 WHERE U.UNION_ID = #{id};
+		]]>
+    </select>
 
 
 
 
 
+    <update id="updateUnionName">
+        <![CDATA[
+			UPDATE
+			    world.UNIONS
+			    SET
+			    UNION_NAME = #{name}
+			    WHERE UNION_ID = #{id}
+		]]>
+    </update>
 
 
 
-    <!--<sql id="deleteUnion">-->
-        <!--<![CDATA[-->
-			<!--DELETE FROM world.UNIONS-->
-		<!--]]>-->
-    <!--</sql>-->
 
-    <!--<delete id="deleteUnionById">-->
-        <!--<include refid="deleteUnion"/>-->
-        <!--<![CDATA[-->
-        <!--WHERE UNION_ID = #{id}-->
-        <!--]]>-->
-    <!--</delete>-->
 
-    <!--<delete id="deleteUnion">-->
-        <!--<include refid="deleteUnion"/>-->
-        <!--<![CDATA[-->
-        <!--WHERE UNION_NAME = #{name}-->
-         <!--]]>-->
-    <!--</delete>-->
+
+
+
+    <sql id="deleteUnion">
+        <![CDATA[
+			DELETE FROM world.UNIONS
+		]]>
+    </sql>
+
+    <delete id="deleteUnionById">
+        <include refid="deleteUnion"/>
+        <![CDATA[
+        WHERE UNION_ID = #{id}
+        ]]>
+    </delete>
+
+    <delete id="deleteUnion">
+        <include refid="deleteUnion"/>
+        <![CDATA[
+        WHERE UNION_NAME = #{name}
+         ]]>
+    </delete>
 
 
     <resultMap id="UnionResultMap" type="com.qaprosoft.mybatisExample.model.Union" autoMapping="false">

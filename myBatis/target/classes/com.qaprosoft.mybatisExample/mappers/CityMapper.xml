@@ -4,20 +4,20 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.qaprosoft.mybatisExample.dao.mysql.interfaces.CityMapper">
+<mapper namespace="com.qaprosoft.mybatisExample.interfaces.CityMapper">
 
-    <!--<insert id="cityInsert" parameterType="City"  useGeneratedKeys="true" keyProperty="id">-->
-       <!--<![CDATA[-->
-        <!--insert into world.CITIES (CITY_NAME, CITY_POPULATION, CITY_STATUS, COUNTRIES_ID)-->
-        <!--values-->
-        <!--(-->
-        <!--#{name},-->
-        <!--#{cityPopulation},-->
-        <!--#{cityStatus},-->
-        <!--#{countryId}-->
-        <!--)-->
-  <!--]]>-->
-    <!--</insert>-->
+    <insert id="cityInsert" parameterType="com.qaprosoft.mybatisExample.model.City"  useGeneratedKeys="true" keyProperty="id">
+       <![CDATA[
+        insert into world.CITIES (CITY_NAME, CITY_POPULATION, CITY_STATUS, COUNTRIES_ID)
+        values
+        (
+        #{name},
+        #{cityPopulation},
+        #{cityStatus},
+        #{countryId}
+        )
+  ]]>
+    </insert>
 
     <!--<insert id="citiesInsert" parameterType="City" useGeneratedKeys="true" keyProperty="id">-->
         <!--<![CDATA[-->

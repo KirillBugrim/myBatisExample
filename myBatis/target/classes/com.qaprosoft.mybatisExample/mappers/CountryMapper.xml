@@ -4,9 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="com.qaprosoft.mybatisExample.dao.mysql.interfaces.CountryMapper">
+<mapper namespace="com.qaprosoft.mybatisExample.interfaces.CountryMapper">
 
-    <insert id="createCountry" useGeneratedKeys="true" keyProperty="id">
+    <insert id="createCountry" parameterType="com.qaprosoft.mybatisExample.model.Country" useGeneratedKeys="true" keyProperty="id">
         <![CDATA[
         insert into world.COUNTRIES (COUNTRY_NAME, COUNTRY_POPULATION, COUNTRY_AREA) values
         (
