@@ -22,11 +22,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbaccess-config.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dbaccess-config.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/dbaccess-config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="35" column="94" lean-forward="false" selection-start-line="35" selection-start-column="94" selection-end-line="35" selection-end-column="94" />
+            <state relative-caret-position="403">
+              <caret line="34" column="59" lean-forward="false" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -74,7 +74,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/qaprosoft/mybatisExample/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -89,8 +89,8 @@
       <file leaf-file-name="UnionMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/com.qaprosoft.mybatisExample/mappers/UnionMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="9" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="10" selection-end-column="9" />
+            <state relative-caret-position="75">
+              <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -99,18 +99,8 @@
       <file leaf-file-name="CountryMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/com.qaprosoft.mybatisExample/mappers/CountryMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CityMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/qaprosoft/mybatisExample/mappers/CityMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-1016">
+              <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -128,7 +118,6 @@
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/com.qaprosoft.mybatisExample/mappers/UnionMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaprosoft/mybatisExample/dao/mysql/interfaces/CityMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com.qaprosoft.mybatisExample/mappers/CityMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/qaprosoft/mybatisExample/dao/mysql/interfaces/UnionMapper.java" />
@@ -136,6 +125,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/qaprosoft/mybatisExample/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/dbaccess-config.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/com.qaprosoft.mybatisExample/mappers/CountryMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/com.qaprosoft.mybatisExample/mappers/UnionMapper.xml" />
       </list>
     </option>
   </component>
@@ -195,16 +185,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="mybatisExample" type="462c0819:PsiDirectoryNode" />
-              <item name="mappers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myBatis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myBatis" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatisExample" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myBatis" type="b2602c69:ProjectViewProjectNode" />
@@ -515,14 +496,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com.qaprosoft.mybatisExample/mappers/UnionMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="10" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaprosoft/mybatisExample/dao/mysql/interfaces/CityMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -565,32 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaprosoft/mybatisExample/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="66" lean-forward="false" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaprosoft/mybatisExample/dao/mysql/interfaces/CountryMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com.qaprosoft.mybatisExample/mappers/CountryMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/qaprosoft/mybatisExample/model/CityMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -607,11 +554,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaprosoft/mybatisExample/dao/mysql/interfaces/CountryMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/dbaccess-config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="35" column="94" lean-forward="false" selection-start-line="35" selection-start-column="94" selection-end-line="35" selection-end-column="94" />
+        <state relative-caret-position="403">
+          <caret line="34" column="59" lean-forward="false" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com.qaprosoft.mybatisExample/mappers/UnionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com.qaprosoft.mybatisExample/mappers/CountryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1016">
+          <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/qaprosoft/mybatisExample/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="66" lean-forward="false" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

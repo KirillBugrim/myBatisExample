@@ -6,7 +6,7 @@
 
 <mapper namespace="com.qaprosoft.mybatisExample.dao.mysql.interfaces.CountryMapper">
 
-    <insert id="createCountry" parameterType="Country" useGeneratedKeys="true" keyProperty="id">
+    <insert id="createCountry" useGeneratedKeys="true" keyProperty="id">
         <![CDATA[
         insert into world.COUNTRIES (COUNTRY_NAME, COUNTRY_POPULATION, COUNTRY_AREA) values
         (

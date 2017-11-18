@@ -3,7 +3,7 @@
 
 <mapper namespace="com.qaprosoft.mybatisExample.dao.mysql.interfaces.UnionMapper">
 
-    <insert id="createUnion" parameterType="Union" useGeneratedKeys="true" keyProperty="id">
+    <insert id="createUnion"  useGeneratedKeys="true" keyProperty="id">
         <![CDATA[
         insert into world.UNIONS (UNION_NAME) values
         (

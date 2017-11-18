@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("dbaccess-config.xml");
         CountryMapper unionMapper = ctx.getBean(CountryMapper.class);
-        unionMapper.createCountry(new Country("Zimbabwe",2424,2424));
+        unionMapper.createCountry(new Country("Zimbafsfsbwe",2424,2424));
 
 
     }
