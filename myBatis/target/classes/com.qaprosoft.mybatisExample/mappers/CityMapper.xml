@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="cityMapping">
+
+    <insert id="cityInsert" parameterType="City"  useGeneratedKeys="true" keyProperty="id">
+       <![CDATA[
+        insert into world.CITIES (CITY_NAME, CITY_POPULATION, CITY_STATUS, COUNTRIES_ID)
+        values
+        (
+        #{name},
+        #{cityPopulation},
+        #{cityStatus},
+        #{countryId}
+        )
+  ]]>
+    </insert>
+
+    <insert id="citiesInsert" parameterType="City" useGeneratedKeys="true" keyProperty="id">
+        <![CDATA[
+        insert into world.CITIES (CITY_NAME, CITY_POPULATION, CITY_STATUS, COUNTRIES_ID) values
+        ]]>
+        <foreach item="city" collection="list" separator=",">
+            (#{city.name},
+            #{city.cityPopulation} ,
+            #{city.cityStatus},
+            #{countryId}
+            )
+        </foreach>
+    </insert>
+
+
+    <sql id="getCity">
+        <![CDATA[
+			SELECT
+				CI.CITY_ID, CI.CITY_NAME, CI.CITY_POPULATION, CI.CITY_STATUS,
+				CI.COUNTRIES_ID FROM world.CITIES CI
+		]]>
+    </sql>
+
+
+    <select id="getCityById" resultMap="CityResultMap">
+        <include refid="getCity"/>
+        <![CDATA[
+			WHERE CI.CITY_ID = #{id};
+		]]>
+    </select>
+
+    <select id="getCityByName" resultMap="CityResultMap">
+        <include refid="getCity" />
+        <![CDATA[
+			WHERE CI.CITY_NAME = #{name};
+		]]>
+    </select>
+
+
+
+    <update id="updateCity">
+        <![CDATA[
+			UPDATE
+			    world.CITIES
+		]]>
+        <set>
+            <if test="null != name">
+                <![CDATA[
+		              CITY_NAME = #{name},
+		            ]]>
+            </if>
+            <if test="null != cityPopulation">
+                <![CDATA[
+		               CITY_POPULATION = #{cityPopulation},
+		            ]]>
+            </if>
+            <if test="null != cityStatus">
+                <![CDATA[
+		               CITY_STATUS = #{cityStatus},
+		            ]]>
+            </if>
+        </set>
+        <![CDATA[
+			WHERE
+			    CITY_ID = #{id}
+		]]>
+    </update>
+
+
+    <sql id="deleteCity">
+        <![CDATA[
+			DELETE FROM world.CITIES
+		]]>
+    </sql>
+
+    <delete id="deleteCityById">
+        <include refid="deleteCity"/>
+        <![CDATA[
+        WHERE CITY_ID = #{id}
+        ]]>
+    </delete>
+
+    <delete id="deleteCity">
+        <include refid="deleteCity"/>
+        <![CDATA[
+        WHERE CITY_NAME = #{name}
+         ]]>
+    </delete>
+
+
+
+    <resultMap id="CityResultMap" type="City" autoMapping="false">
+        <id property="id" column="CITY_ID"/>
+        <result property="name" column="CITY_NAME"/>
+        <result property="cityPopulation" column="CITY_POPULATION"/>
+        <result property="cityStatus" column="CITY_STATUS"/>
+        <result property="countryId" column="COUNTRIES_ID"/>
+    </resultMap>
+
+</mapper>
