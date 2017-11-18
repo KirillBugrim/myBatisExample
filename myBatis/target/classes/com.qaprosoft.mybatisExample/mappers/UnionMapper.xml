@@ -8,7 +8,7 @@
 
     <insert id="createUnion" parameterType="Union" useGeneratedKeys="true" keyProperty="id">
         <![CDATA[
-        insert into world.UNIONS (NAME) values
+        insert into world.UNIONS (UNION_NAME) values
         (
         #{name}
         )
@@ -18,7 +18,7 @@
 
     <insert id="insertUnions" parameterType="Union" useGeneratedKeys="true" >
         <![CDATA[
-        insert into world.UNIONS (NAME) values
+        insert into world.UNIONS (UNION_NAME) values
         ]]>
         <foreach item="union" collection="list" separator=",">
             (#{union.name})
@@ -30,7 +30,7 @@
 
     <sql id="getUnion">
         <![CDATA[
-        SELECT U.ID, U.NAME FROM world.UNIONS U
+        SELECT U.UNION_ID, U.UNION_NAME FROM world.UNIONS U
 		]]>
     </sql>
 
@@ -38,7 +38,7 @@
     <select id="getUnionById" resultMap="UnionResultMap">
         <include refid="getUnion" />
         <![CDATA[
-			 WHERE U.ID = #{id};
+			 WHERE U.UNION_ID = #{id};
 		]]>
     </select>
 
@@ -51,8 +51,8 @@
 			UPDATE
 			    world.UNIONS
 			    SET
-			    NAME = #{name}
-			    WHERE ID = #{id}
+			    UNION_NAME = #{name}
+			    WHERE UNION_ID = #{id}
 		]]>
     </update>
 
@@ -72,21 +72,21 @@
     <delete id="deleteUnionById">
         <include refid="deleteUnion"/>
         <![CDATA[
-        WHERE ID = #{id}
+        WHERE UNION_ID = #{id}
         ]]>
     </delete>
 
     <delete id="deleteUnion">
         <include refid="deleteUnion"/>
         <![CDATA[
-        WHERE NAME = #{name}
+        WHERE UNION_NAME = #{name}
          ]]>
     </delete>
 
 
     <resultMap id="UnionResultMap" type="Union" autoMapping="false">
-        <id property="id" column="ID"/>
-        <result property="name" column="NAME"/>
+        <id property="id" column="UNION_ID"/>
+        <result property="name" column="UNION_NAME"/>
     </resultMap>
 
     <!--<resultMap id="CountryResultMap" type="Country" autoMapping="false">-->

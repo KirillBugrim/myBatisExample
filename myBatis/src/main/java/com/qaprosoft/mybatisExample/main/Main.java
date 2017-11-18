@@ -35,7 +35,9 @@ public class Main {
 //        city = new City("Homel",600000,"Kolhoz",country.getId());
 //        CITY_DAO.createCity(city);
 
-        System.out.println(COUNTRY_DAO.getCountryById(1));
+
+        UNION_DAO.createUnion(new Union("USSR"));
+        System.out.println(UNION_DAO.getUnionById(1));
 
 
     }
