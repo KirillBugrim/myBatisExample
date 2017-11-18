@@ -1,12 +1,13 @@
 package com.qaprosoft.mybatisExample.interfaces;
 
 import com.qaprosoft.mybatisExample.model.City;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface CityMapper {
 
-    void createCity(City city);
+    void createCity(@Param("city") City city, @Param("countryId") long countryId);
 
     void createCities(List<City> cities);
 

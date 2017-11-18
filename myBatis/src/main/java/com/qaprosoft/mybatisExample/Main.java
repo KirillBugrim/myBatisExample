@@ -1,6 +1,8 @@
 package com.qaprosoft.mybatisExample;
 
+import com.qaprosoft.mybatisExample.model.City;
 import com.qaprosoft.mybatisExample.model.Country;
+import com.qaprosoft.mybatisExample.model.Union;
 import com.qaprosoft.mybatisExample.services.CityService;
 import com.qaprosoft.mybatisExample.services.CountryService;
 import com.qaprosoft.mybatisExample.services.UnionService;
@@ -17,7 +19,12 @@ public class Main {
         UnionService unionService = ctx.getBean(UnionService.class);
         CityService cityService = ctx.getBean(CityService.class);
 
-        System.out.println(unionService.getUnionById(1));
+
+
+//        countryService.createCountry(new Country("ddsf",32424,4224));
+//        unionService.createUnion(new Union("dsf"));
+
+unionService.addCountryToUnion(1, 1);
 
 
     }

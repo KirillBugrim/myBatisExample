@@ -2,6 +2,7 @@ package com.qaprosoft.mybatisExample.services;
 
 import com.qaprosoft.mybatisExample.interfaces.CityMapper;
 import com.qaprosoft.mybatisExample.model.City;
+import com.qaprosoft.mybatisExample.model.Country;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,8 +16,8 @@ public class CityService {
     private CityMapper cityMapper;
 
     @Transactional(rollbackFor = Exception.class)
-    public void createCity(City city){
-    cityMapper.createCity(city);
+    public void createCity(City city, Country country){
+    cityMapper.createCity(city, country.getId());
     }
 
     @Transactional(rollbackFor = Exception.class)

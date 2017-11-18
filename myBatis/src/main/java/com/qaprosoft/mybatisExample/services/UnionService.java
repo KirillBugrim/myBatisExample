@@ -2,6 +2,7 @@ package com.qaprosoft.mybatisExample.services;
 
 
 import com.qaprosoft.mybatisExample.interfaces.UnionMapper;
+import com.qaprosoft.mybatisExample.model.Country;
 import com.qaprosoft.mybatisExample.model.Union;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,6 +44,11 @@ public class UnionService {
     @Transactional(rollbackFor = Exception.class)
     public void deleteUnion(Union union){
         unionMapper.deleteUnion(union);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public void addCountryToUnion(long unionId, long countryId){
+        unionMapper.addCountry2Union(unionId, countryId);
     }
 
 }

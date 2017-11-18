@@ -24,6 +24,17 @@
 
 
 
+    <insert id="addCountry2Union" useGeneratedKeys="true">
+        <![CDATA[
+            INSERT INTO world.COUNTRIES_UNIONS (COUNTRIES_ID, UNIONS_ID)
+            VALUES (
+                #{unionId},
+                #{countryId}
+            )
+        ]]>
+    </insert>
+
+
 
     <sql id="getUnion">
         <![CDATA[

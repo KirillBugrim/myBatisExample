@@ -2,6 +2,7 @@ package com.qaprosoft.mybatisExample.interfaces;
 
 import com.qaprosoft.mybatisExample.model.Union;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,4 +21,6 @@ public interface UnionMapper {
     void deleteUnionById(long id);
 
     void deleteUnion(Union union);
+
+    void addCountry2Union(@Param("unionId") long unionId, @Param("countryId") long countryId);
 }

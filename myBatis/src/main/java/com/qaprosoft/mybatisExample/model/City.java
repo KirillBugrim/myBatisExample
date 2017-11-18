@@ -16,6 +16,7 @@ public class City {
         this.cityStatus = cityStatus;
     }
 
+
     public long getId() {
         return id;
     }
