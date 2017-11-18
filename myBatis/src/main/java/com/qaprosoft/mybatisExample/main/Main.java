@@ -37,7 +37,7 @@ public class Main {
 
 
         UNION_DAO.createUnion(new Union("USSR"));
-//        System.out.println(UNION_DAO.getUnionById(1));
+        System.out.println(UNION_DAO.getUnionById(1));
 
 
     }
