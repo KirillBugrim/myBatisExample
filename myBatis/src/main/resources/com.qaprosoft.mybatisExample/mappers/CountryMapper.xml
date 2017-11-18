@@ -4,9 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-<mapper namespace="countryMapping">
+<mapper namespace="com.qaprosoft.mybatisExample.dao.mysql.interfaces.CountryMapper">
 
-    <insert id="countryInsert" parameterType="Country" useGeneratedKeys="true" keyProperty="id">
+    <insert id="createCountry" parameterType="Country" useGeneratedKeys="true" keyProperty="id">
         <![CDATA[
         insert into world.COUNTRIES (COUNTRY_NAME, COUNTRY_POPULATION, COUNTRY_AREA) values
         (
@@ -18,99 +18,94 @@
     </insert>
 
 
-    <insert id="createCountries" parameterType="Country" useGeneratedKeys="true">
-        <![CDATA[
-        insert into world.COUNTRIES (COUNTRY_NAME, COUNTRY_POPULATION, COUNTRY_AREA) values
-        ]]>
-        <foreach item="country" collection="list" separator=",">
-            (#{country.name}, #{country.population} , #{country.area})
-        </foreach>
-    </insert>
+    <!--<insert id="createCountries" parameterType="Country" useGeneratedKeys="true">-->
+        <!--<![CDATA[-->
+        <!--insert into world.COUNTRIES (COUNTRY_NAME, COUNTRY_POPULATION, COUNTRY_AREA) values-->
+        <!--]]>-->
+        <!--<foreach item="country" collection="list" separator=",">-->
+            <!--(#{country.name}, #{country.population} , #{country.area})-->
+        <!--</foreach>-->
+    <!--</insert>-->
 
 
-    <sql id="getCountry">
-        <![CDATA[
-			SELECT
+    <!--<sql id="getCountry">-->
+        <!--<![CDATA[-->
+			<!--SELECT-->
 
-				CO.COUNTRY_ID, CO.COUNTRY_NAME, CO.COUNTRY_POPULATION, CO.COUNTRY_AREA,
-				CI.CITY_ID, CI.CITY_NAME, CI.CITY_POPULATION, CI.CITY_STATUS, CI.COUNTRIES_ID
-				FROM world.COUNTRIES CO inner join world.CITIES CI on CO.COUNTRY_ID=CI.COUNTRIES_ID
-		]]>
-    </sql>
-
-
-    <select id="getCountryById" resultMap="CountryResultMap">
-        <include refid="getCountry"/>
-        <![CDATA[
-			WHERE CO.COUNTRY_ID = #{id};
-		]]>
-    </select>
+				<!--CO.COUNTRY_ID, CO.COUNTRY_NAME, CO.COUNTRY_POPULATION, CO.COUNTRY_AREA,-->
+				<!--CI.CITY_ID, CI.CITY_NAME, CI.CITY_POPULATION, CI.CITY_STATUS, CI.COUNTRIES_ID-->
+				<!--FROM world.COUNTRIES CO inner join world.CITIES CI on CO.COUNTRY_ID=CI.COUNTRIES_ID-->
+		<!--]]>-->
+    <!--</sql>-->
 
 
-    <update id="updateCountry">
-        <![CDATA[
-			UPDATE
-			    world.COUNTRIES
-		]]>
-        <set>
-            <if test="null != name">
-                <![CDATA[
-		               COUNTRY_NAME = #{name},
-		            ]]>
-            </if>
-            <if test="null != population">
-                <![CDATA[
-		               COUNTRY_POPULATION = #{population},
-		            ]]>
-            </if>
-            <if test="null != area">
-                <![CDATA[
-		               COUNTRY_AREA = #{area},
-		            ]]>
-            </if>
-        </set>
-        <![CDATA[
-			WHERE
-			    COUNTRY_ID = #{id}
-		]]>
-    </update>
+    <!--<select id="getCountryById" resultMap="CountryResultMap">-->
+        <!--<include refid="getCountry"/>-->
+        <!--<![CDATA[-->
+			<!--WHERE CO.COUNTRY_ID = #{id};-->
+		<!--]]>-->
+    <!--</select>-->
 
 
-    <sql id="deleteCountry">
-        <![CDATA[
-			DELETE FROM world.COUNTRIES
-		]]>
-    </sql>
+    <!--<update id="updateCountry">-->
+        <!--<![CDATA[-->
+			<!--UPDATE-->
+			    <!--world.COUNTRIES-->
+		<!--]]>-->
+        <!--<set>-->
+            <!--<if test="null != name">-->
+                <!--<![CDATA[-->
+		               <!--COUNTRY_NAME = #{name},-->
+		            <!--]]>-->
+            <!--</if>-->
+            <!--<if test="null != population">-->
+                <!--<![CDATA[-->
+		               <!--COUNTRY_POPULATION = #{population},-->
+		            <!--]]>-->
+            <!--</if>-->
+            <!--<if test="null != area">-->
+                <!--<![CDATA[-->
+		               <!--COUNTRY_AREA = #{area},-->
+		            <!--]]>-->
+            <!--</if>-->
+        <!--</set>-->
+        <!--<![CDATA[-->
+			<!--WHERE-->
+			    <!--COUNTRY_ID = #{id}-->
+		<!--]]>-->
+    <!--</update>-->
 
-    <delete id="deleteCountry">
-        <include refid="deleteCountry"/>
-        <![CDATA[
-        WHERE COUNTRY_NAME = #{name}
-         ]]>
-    </delete>
 
-    <delete id="deleteCountryById">
-        <include refid="deleteCountry"/>
-        <![CDATA[
-        WHERE COUNTRY_ID = #{id}
-        ]]>
-    </delete>
+    <!--<sql id="deleteCountry">-->
+        <!--<![CDATA[-->
+			<!--DELETE FROM world.COUNTRIES-->
+		<!--]]>-->
+    <!--</sql>-->
+
+    <!--<delete id="deleteCountry">-->
+        <!--<include refid="deleteCountry"/>-->
+        <!--<![CDATA[-->
+        <!--WHERE COUNTRY_NAME = #{name}-->
+         <!--]]>-->
+    <!--</delete>-->
+
+    <!--<delete id="deleteCountryById">-->
+        <!--<include refid="deleteCountry"/>-->
+        <!--<![CDATA[-->
+        <!--WHERE COUNTRY_ID = #{id}-->
+        <!--]]>-->
+    <!--</delete>-->
 
 
-    <resultMap id="CountryResultMap" type="Country" autoMapping="false">
-        <id property="id" column="ID"/>
-        <result property="name" column="COUNTRY_NAME"/>
-        <result property="population" column="COUNTRY_POPULATION"/>
-        <result property="area" column="COUNTRY_AREA"/>
-        <collection property="cities" ofType="City" resultMap="com.qaprosoft.mybatisExample.mappers.CityMapper.CityResultMap"/>
-            <!--<id property="id" column="CITY_ID"/>-->
-            <!--<result property="name" column="CITY_NAME"/>-->
-            <!--<result property="cityPopulation" column="CITY_POPULATION"/>-->
-            <!--<result property="cityStatus" column="CITY_STATUS"/>-->
-            <!--<result property="countryId" column="COUNTRIES_ID"/>-->
-        <!--</collection>-->
+    <!--<resultMap id="CountryResultMap" type="com.qaprosoft.mybatisExample.model.Country" autoMapping="false">-->
+        <!--<id property="id" column="ID"/>-->
+        <!--<result property="name" column="COUNTRY_NAME"/>-->
+        <!--<result property="population" column="COUNTRY_POPULATION"/>-->
+        <!--<result property="area" column="COUNTRY_AREA"/>-->
+        <!--<collection property="cities" ofType="City" resultMap="com.qaprosoft.mybatisExample.mappers.CityMapper.CityResultMap"/>-->
+
         <!--<collection property="unions" ofType="Union"-->
                     <!--resultMap="com.qaprosoft.mybatisExample.mappers.UnionMapper.UnionResultMap"/>-->
-    </resultMap>
+    <!--</resultMap>-->
 
 </mapper>
