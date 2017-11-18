@@ -43,4 +43,9 @@ public class CountryService {
     public Country getCountryById(long id){
         return countryMapper.getCountryById(id);
     }
+
+    @Transactional(readOnly = true)
+    public Long getCountAllCountries(){
+        return countryMapper.getCountAllCountries();
+    }
 }

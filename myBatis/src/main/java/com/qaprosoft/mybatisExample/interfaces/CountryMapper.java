@@ -19,4 +19,6 @@ public interface CountryMapper {
 
     void deleteCountry(Country country);
 
+    Long getCountAllCountries();
+
 }

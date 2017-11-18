@@ -9,6 +9,9 @@ import com.qaprosoft.mybatisExample.services.UnionService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
 
@@ -24,8 +27,9 @@ public class Main {
 //        countryService.createCountry(new Country("ddsf",32424,4224));
 //        unionService.createUnion(new Union("dsf"));
 
-unionService.addCountryToUnion(1, 1);
-
+        System.out.println(countryService.getCountAllCountries());
+        System.out.println(unionService.getCountAllUnoins());
+        System.out.println(cityService.getCountAllCities());
 
     }
 

@@ -50,4 +50,9 @@ public class CityService {
         return cityMapper.getCityByName(name);
     }
 
+    @Transactional(readOnly = true)
+    public Long getCountAllCities(){
+        return cityMapper.getCountAllCities();
+    }
+
 }

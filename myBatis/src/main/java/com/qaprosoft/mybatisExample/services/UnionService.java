@@ -51,4 +51,9 @@ public class UnionService {
         unionMapper.addCountry2Union(unionId, countryId);
     }
 
+    @Transactional(readOnly = true)
+    public Long getCountAllUnoins(){
+        return unionMapper.getCountAllUnions();
+    }
+
 }

@@ -65,7 +65,11 @@
     </update>
 
 
-
+    <select id="getCountAllUnions"  resultType="java.lang.Long" >
+        <![CDATA[
+		select count(*) from world.UNIONS
+		]]>
+    </select>
 
 
 

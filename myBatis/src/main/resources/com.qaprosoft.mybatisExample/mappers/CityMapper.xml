@@ -109,6 +109,16 @@
 
 
 
+    <select id="getCountAllCities"  resultType="java.lang.Long" >
+        <![CDATA[
+		select count(*) from world.CITIES
+		]]>
+    </select>
+
+
+
+
+
     <resultMap id="CityResultMap" type="com.qaprosoft.mybatisExample.model.City" autoMapping="false">
         <id property="id" column="CITY_ID"/>
         <result property="name" column="CITY_NAME"/>

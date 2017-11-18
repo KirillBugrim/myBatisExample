@@ -97,6 +97,12 @@
     </delete>
 
 
+    <select id="getCountAllCountries"  resultType="java.lang.Long" >
+        <![CDATA[
+		select count(*) from world.COUNTRIES
+		]]>
+    </select>
+
     <resultMap id="CountryResultMap" type="com.qaprosoft.mybatisExample.model.Country" autoMapping="false">
         <id property="id" column="ID"/>
         <result property="name" column="COUNTRY_NAME"/>

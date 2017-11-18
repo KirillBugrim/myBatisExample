@@ -20,4 +20,6 @@ public interface CityMapper {
     void deleteCityById(long id);
 
     void deleteCity(City city);
+
+    Long getCountAllCities();
 }

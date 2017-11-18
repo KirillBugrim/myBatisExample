@@ -23,4 +23,6 @@ public interface UnionMapper {
     void deleteUnion(Union union);
 
     void addCountry2Union(@Param("unionId") long unionId, @Param("countryId") long countryId);
+
+    Long getCountAllUnions();
 }
