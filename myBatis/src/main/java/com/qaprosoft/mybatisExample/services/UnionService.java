@@ -7,11 +7,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class UnionService {
 
     @Autowired
     private UnionMapper unionMapper;
+
+    @Transactional(rollbackFor = Exception.class)
+    public void createUnions(List<Union> unions){
+        unionMapper.createUnions(unions);
+    }
 
     @Transactional(rollbackFor = Exception.class)
     public void createUnion(Union union){

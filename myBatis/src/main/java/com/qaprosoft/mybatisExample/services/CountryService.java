@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.PostConstruct;
+import java.util.List;
 
 @Service
 public class CountryService {
@@ -16,6 +17,11 @@ public class CountryService {
     @Transactional(rollbackFor = Exception.class)
     public void createCountry(Country country){
         countryMapper.createCountry(country);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public void createCountries(List<Country> countries){
+        countryMapper.createCountries(countries);
     }
 
     @Transactional(rollbackFor = Exception.class)

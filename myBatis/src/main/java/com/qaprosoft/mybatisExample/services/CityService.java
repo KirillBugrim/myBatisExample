@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class CityService {
 
@@ -15,6 +17,11 @@ public class CityService {
     @Transactional(rollbackFor = Exception.class)
     public void createCity(City city){
     cityMapper.createCity(city);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public void createCities(List<City> cities){
+        cityMapper.createCities(cities);
     }
 
     @Transactional(rollbackFor = Exception.class)
