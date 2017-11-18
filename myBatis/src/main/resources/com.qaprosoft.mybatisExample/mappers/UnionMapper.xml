@@ -8,7 +8,7 @@
 
     <insert id="createUnion" parameterType="Union" useGeneratedKeys="true" keyProperty="id">
         <![CDATA[
-        insert into world.UNIONS (UNION_NAME) values
+        insert into world.UNIONS (UNINAME) values
         (
         #{name}
         )
