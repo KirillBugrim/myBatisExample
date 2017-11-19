@@ -24,4 +24,6 @@ public interface CityMapper {
     Long getCountAllCities();
 
     void deleteAllCities();
+
+    List<City> getAllCitiesByCountryName(@Param("nameCountry") String nameCountry);
 }

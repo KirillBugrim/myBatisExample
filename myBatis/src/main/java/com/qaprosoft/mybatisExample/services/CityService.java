@@ -55,6 +55,11 @@ public class CityService {
         return cityMapper.getCountAllCities();
     }
 
+    @Transactional(readOnly = true)
+    public List<City> getAllCountryCities(String countryName){
+        return cityMapper.getAllCitiesByCountryName(countryName);
+    }
+
     @Transactional(rollbackFor = Exception.class)
     public void deleteAllCities () {
         cityMapper.deleteAllCities();
