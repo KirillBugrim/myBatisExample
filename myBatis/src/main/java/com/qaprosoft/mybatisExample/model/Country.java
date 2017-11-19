@@ -94,10 +94,10 @@ public class Country {
     public String toString() {
         return "Country{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + name +
                 ", population=" + population +
-                ", area=" + area +
-                ", cities=" + cities +
+                ", area=" + area +'\n' +
+                ", cities=" + cities +'\n' +
                 ", unions=" + unions +
                 '}';
     }

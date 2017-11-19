@@ -30,10 +30,24 @@
 
     <sql id="getCountry">
         <![CDATA[
-			SELECT
-
-				CO.COUNTRY_ID, CO.COUNTRY_NAME, CO.COUNTRY_POPULATION, CO.COUNTRY_AREA
-				FROM world.COUNTRIES CO
+		   SELECT
+		   CO.COUNTRY_ID,
+		   CO.COUNTRY_NAME,
+           CO.COUNTRY_POPULATION,
+           CO.COUNTRY_AREA,
+           U.UNION_ID,
+           U.UNION_NAME,
+		   C.CITY_ID,
+		   C.CITY_NAME,
+		   C.CITY_POPULATION,
+		   C.CITY_STATUS
+           FROM  COUNTRIES CO
+           join COUNTRIES_UNIONS CU
+           on CO.COUNTRY_ID=CU.COUNTRIES_ID
+           join UNIONS U
+           on CU.UNIONS_ID=U.UNION_ID
+           join CITIES C
+           on CO.COUNTRY_ID=C.COUNTRIES_ID
 		]]>
     </sql>
 
@@ -119,8 +133,17 @@
         <result property="name" column="COUNTRY_NAME"/>
         <result property="population" column="COUNTRY_POPULATION"/>
         <result property="area" column="COUNTRY_AREA"/>
-        <!--<collection property="cities" ofType="com.qaprosoft.mybatisExample.model.Country" resultMap="com.qaprosoft.mybatisExample.mappers.CityMapper.CityResultMap"/>-->
-        <!--<collection property="unions" ofType="com.qaprosoft.mybatisExample.model.Union" resultMap="com.qaprosoft.mybatisExample.mappers.UnionMapper.UnionResultMap"/>-->
+        <collection property="cities" ofType="com.qaprosoft.mybatisExample.model.City" >
+            <id property="id" column="CITY_ID"/>
+            <result property="name" column="CITY_NAME"/>
+            <result property="cityPopulation" column="CITY_POPULATION"/>
+            <result property="cityStatus" column="CITY_STATUS"/>
+        </collection>
+        <collection property="unions" ofType="com.qaprosoft.mybatisExample.model.Union">
+            <id property="id" column="UNION_ID"/>
+            <result property="name" column="UNION_NAME"/>
+        </collection>
     </resultMap>
+
 
 </mapper>

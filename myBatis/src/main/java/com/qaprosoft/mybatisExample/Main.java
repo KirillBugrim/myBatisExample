@@ -97,7 +97,11 @@ public class Main {
 //        unionService.addCountryToUnion(unionService.getUnionByName("NATO"),countryService.getCountryByName("Estonia"));
 
 //        System.out.println(cityService.getCityByName("Minsk"));
-        System.out.println(cityService.getAllCountryCities("USA"));
+
+
+        System.out.println(countryService.getCountryById(15));
+
+
     }
 
 }
