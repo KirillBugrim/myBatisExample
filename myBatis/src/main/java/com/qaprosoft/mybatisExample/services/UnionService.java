@@ -67,7 +67,7 @@ public class UnionService {
     }
 
     @Transactional(readOnly = true)
-    public Long getCountAllUnoins(){
+    public Long getCountAllUnions(){
         return unionMapper.getCountAllUnions();
     }
 

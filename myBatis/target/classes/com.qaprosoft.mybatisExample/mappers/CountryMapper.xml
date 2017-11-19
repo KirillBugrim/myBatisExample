@@ -29,7 +29,7 @@
 
 
     <sql id="getCountry">
-        <![CDATA[
+            <![CDATA[
 		   SELECT
 		   CO.COUNTRY_ID,
 		   CO.COUNTRY_NAME,
@@ -42,11 +42,11 @@
 		   C.CITY_POPULATION,
 		   C.CITY_STATUS
            FROM  COUNTRIES CO
-           join COUNTRIES_UNIONS CU
+           left join COUNTRIES_UNIONS CU
            on CO.COUNTRY_ID=CU.COUNTRIES_ID
-           join UNIONS U
+           left join UNIONS U
            on CU.UNIONS_ID=U.UNION_ID
-           join CITIES C
+           left join CITIES C
            on CO.COUNTRY_ID=C.COUNTRIES_ID
 		]]>
     </sql>
@@ -55,7 +55,7 @@
     <select id="getCountryById" resultMap="CountryResultMap">
         <include refid="getCountry"/>
         <![CDATA[
-			WHERE CO.COUNTRY_ID = #{id};
+			WHERE CO.COUNTRY_ID = #{country.id};
 		]]>
     </select>
 
@@ -63,7 +63,7 @@
     <select id="getCountryByName" resultMap="CountryResultMap">
         <include refid="getCountry"/>
         <![CDATA[
-			WHERE CO.COUNTRY_NAME = #{name};
+			WHERE CO.COUNTRY_NAME = #{country.name};
 		]]>
     </select>
 
@@ -144,6 +144,5 @@
             <result property="name" column="UNION_NAME"/>
         </collection>
     </resultMap>
-
 
 </mapper>

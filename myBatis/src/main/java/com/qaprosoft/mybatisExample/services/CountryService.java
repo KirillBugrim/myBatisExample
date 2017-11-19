@@ -56,7 +56,7 @@ public class CountryService {
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public void deleteAllCountries () {
+    public void deleteAllCountries() {
         countryMapper.deleteAllCountries();
     }
 }

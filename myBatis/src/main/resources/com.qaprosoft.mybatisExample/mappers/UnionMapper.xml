@@ -62,7 +62,7 @@
         SELECT U.UNION_ID, U.UNION_NAME from UNIONS U
         where U.UNION_ID in
             (SELECT CU.UNIONS_ID
-            from COUNTRIES_UNIONS CU join COUNTRIES C on C.COUNTRY_ID=CU.COUNTRIES_ID
+            from COUNTRIES_UNIONS CU left join COUNTRIES C on C.COUNTRY_ID=CU.COUNTRIES_ID
             WHERE
             C.COUNTRY_NAME= #{name}
             )
@@ -75,7 +75,7 @@
         SELECT U.UNION_ID, U.UNION_NAME from UNIONS U
         where U.UNION_ID in
             (SELECT CU.UNIONS_ID
-            from COUNTRIES_UNIONS CU join COUNTRIES C on C.COUNTRY_ID=CU.COUNTRIES_ID
+            from COUNTRIES_UNIONS CU left join COUNTRIES C on C.COUNTRY_ID=CU.COUNTRIES_ID
             WHERE
             C.COUNTRY_ID= #{country.id}
             )

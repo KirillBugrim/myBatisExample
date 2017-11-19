@@ -24,11 +24,11 @@ public class Main {
 
 
 
+//
 //        countryService.deleteAllCountries();
-//        cityService.deleteAllCities();
 //        unionService.deleteAllUnions();
-
-
+//
+//
 //        List<Country> countries = new ArrayList<Country>();
 //        countries.add(new Country("Belarus",9500000,207000));
 //        countries.add(new Country("Russia",140000000,242552522));
@@ -38,7 +38,7 @@ public class Main {
 //        countries.add(new Country("Ukraine",50000000,549000));
 //        countryService.createCountries(countries);
 //
-//
+////
 //        List<Union> unions = new ArrayList<Union>();
 //        unions.add(new Union("EU"));
 //        unions.add(new Union("NATO"));
@@ -47,8 +47,8 @@ public class Main {
 //        unions.add(new Union("G-20"));
 //        unions.add(new Union("customs union"));
 //        unionService.createUnions(unions);
-
-
+////
+////
 //        List<City> cities = new ArrayList<City>();
 //        cities.add(new City("Minsk", 2000000, City.CityStatus.CAPITAL));
 //        cities.add(new City("Gomel", 500000, City.CityStatus.REGIONAL_CITY));
@@ -80,7 +80,7 @@ public class Main {
 //        List<City> cities5 = new ArrayList<City>();
 //        cities5.add(new City("Tallin", 700000, City.CityStatus.CAPITAL));
 //        cityService.createCities(cities5, countryService.getCountryByName("Estonia"));
-
+//
 //        unionService.addCountryToUnion(unionService.getUnionByName("customs union"),countryService.getCountryByName("Belarus"));
 //        unionService.addCountryToUnion(unionService.getUnionByName("customs union"),countryService.getCountryByName("Russia"));
 //        unionService.addCountryToUnion(unionService.getUnionByName("G-20"),countryService.getCountryByName("Russia"));
@@ -96,10 +96,11 @@ public class Main {
 //        unionService.addCountryToUnion(unionService.getUnionByName("NATO"),countryService.getCountryByName("USA"));
 //        unionService.addCountryToUnion(unionService.getUnionByName("NATO"),countryService.getCountryByName("Estonia"));
 
-//        System.out.println(cityService.getCityByName("Minsk"));
 
 
-        System.out.println(countryService.getCountryById(15));
+
+
+
 
 
     }
