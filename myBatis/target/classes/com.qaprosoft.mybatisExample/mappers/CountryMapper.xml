@@ -6,7 +6,8 @@
 
 <mapper namespace="com.qaprosoft.mybatisExample.interfaces.CountryMapper">
 
-    <insert id="createCountry" parameterType="com.qaprosoft.mybatisExample.model.Country" useGeneratedKeys="true" keyProperty="id">
+    <insert id="createCountry" parameterType="com.qaprosoft.mybatisExample.model.Country" useGeneratedKeys="true"
+            keyProperty="id">
         <![CDATA[
         insert into world.COUNTRIES (COUNTRY_NAME, COUNTRY_POPULATION, COUNTRY_AREA) values
         (
@@ -29,7 +30,7 @@
 
 
     <sql id="getCountry">
-            <![CDATA[
+        <![CDATA[
 		   SELECT
 		   CO.COUNTRY_ID,
 		   CO.COUNTRY_NAME,
@@ -55,7 +56,7 @@
     <select id="getCountryById" resultMap="CountryResultMap">
         <include refid="getCountry"/>
         <![CDATA[
-			WHERE CO.COUNTRY_ID = #{country.id};
+			WHERE CO.COUNTRY_ID = #{id};
 		]]>
     </select>
 
@@ -63,8 +64,34 @@
     <select id="getCountryByName" resultMap="CountryResultMap">
         <include refid="getCountry"/>
         <![CDATA[
-			WHERE CO.COUNTRY_NAME = #{country.name};
+			WHERE CO.COUNTRY_NAME = #{name};
 		]]>
+    </select>
+
+
+    <select id="getCountriesWithPopulationAndAreaMore" resultMap="CountryResultMap">
+        <include refid="getCountry"/>
+        <trim prefix="WHERE" prefixOverrides="AND |OR ">
+            LENGTH(CO.COUNTRY_NAME)>6
+            <choose>
+                <when test="population != null and area == null">
+                    <![CDATA[
+                   and CO.COUNTRY_POPULATION > #{population};
+                     ]]>
+                </when>
+                <when test="area != null  and population == null">
+                    <![CDATA[
+                    and CO.COUNTRY_AREA > #{area};
+                    ]]>
+                </when>
+                <when test="area != null  and population != null">
+                    <![CDATA[
+                   and CO.COUNTRY_POPULATION > #{population} and CO.COUNTRY_AREA > #{area};
+                    ]]>
+                </when>
+            </choose>
+        <!--</where>-->
+        </trim>
     </select>
 
     <update id="updateCountry">
@@ -95,16 +122,14 @@
 		]]>
     </update>
 
-
     <sql id="deleteCountry">
         <![CDATA[
 			DELETE FROM world.COUNTRIES
 		]]>
     </sql>
 
-
     <delete id="deleteAllCountries">
-    <include refid="deleteCountry"/>
+        <include refid="deleteCountry"/>
     </delete>
 
     <delete id="deleteCountry">
@@ -121,8 +146,7 @@
         ]]>
     </delete>
 
-
-    <select id="getCountAllCountries"  resultType="java.lang.Long" >
+    <select id="getCountAllCountries" resultType="java.lang.Long">
         <![CDATA[
 		select count(*) from world.COUNTRIES
 		]]>
@@ -133,7 +157,7 @@
         <result property="name" column="COUNTRY_NAME"/>
         <result property="population" column="COUNTRY_POPULATION"/>
         <result property="area" column="COUNTRY_AREA"/>
-        <collection property="cities" ofType="com.qaprosoft.mybatisExample.model.City" >
+        <collection property="cities" ofType="com.qaprosoft.mybatisExample.model.City">
             <id property="id" column="CITY_ID"/>
             <result property="name" column="CITY_NAME"/>
             <result property="cityPopulation" column="CITY_POPULATION"/>

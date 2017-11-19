@@ -46,6 +46,11 @@ public class CountryService {
     }
 
     @Transactional(rollbackFor = Exception.class)
+    public List<Country> getCountriCountriesWithPopulationAndAreaMore(Long population, Long area) {
+        return countryMapper.getCountriesWithPopulationAndAreaMore(population, area);
+    }
+
+    @Transactional(rollbackFor = Exception.class)
     public Country getCountryByName(String name) {
         return countryMapper.getCountryByName(name);
     }

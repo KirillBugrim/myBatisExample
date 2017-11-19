@@ -17,12 +17,14 @@ public interface CountryMapper {
 
     void updateCountry(Country country);
 
-    void deleteCountryById(long id);
+    void deleteCountryById(Long id);
 
     void deleteCountry(Country country);
 
     Long getCountAllCountries();
 
     void deleteAllCountries();
+
+    List<Country> getCountriesWithPopulationAndAreaMore(@Param("population") Long population,@Param("area") Long area);
 
 }

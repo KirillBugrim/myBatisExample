@@ -4,10 +4,10 @@ import java.util.List;
 
 public class Country {
 
-    private long id;
+    private Long id;
     private String name;
-    private long population;
-    private long area;
+    private Long population;
+    private Long area;
     private List<City> cities;
     private List<Union> unions;
 
@@ -19,20 +19,20 @@ public class Country {
         this.unions = unions;
     }
 
-    public Country(String name, long population, long area) {
+    public Country(String name, Long population, Long area) {
         this.name = name;
         this.population = population;
         this.area = area;
     }
 
-    public Country(long id, String name, long population, long area) {
+    public Country(Long id, String name, Long population, Long area) {
         this.id = id;
         this.name = name;
         this.population = population;
         this.area = area;
     }
 
-    public Country(long id, String name,  long area) {
+    public Country(Long id, String name,Long area) {
         this.id = id;
         this.name = name;
         this.area = area;
@@ -65,19 +65,19 @@ public class Country {
         this.name = name;
     }
 
-    public long getPopulation() {
+    public Long getPopulation() {
         return population;
     }
 
-    public void setPopulation(long population) {
+    public void setPopulation(Long population) {
         this.population = population;
     }
 
-    public long getArea() {
+    public Long getArea() {
         return area;
     }
 
-    public void setArea(long area) {
+    public void setArea(Long area) {
         this.area = area;
     }
 

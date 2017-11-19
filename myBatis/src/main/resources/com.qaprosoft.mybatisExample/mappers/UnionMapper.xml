@@ -13,7 +13,6 @@
          ]]>
     </insert>
 
-
     <insert id="createUnions" parameterType="com.qaprosoft.mybatisExample.model.Union" useGeneratedKeys="true">
         <![CDATA[
         insert into world.UNIONS (UNION_NAME) values
@@ -22,7 +21,6 @@
             (#{union.name})
         </foreach>
     </insert>
-
 
     <insert id="addCountry2Union" useGeneratedKeys="true">
         <![CDATA[
@@ -34,13 +32,11 @@
         ]]>
     </insert>
 
-
     <sql id="getUnion">
         <![CDATA[
         SELECT U.UNION_ID, U.UNION_NAME FROM world.UNIONS U
 		]]>
     </sql>
-
 
     <select id="getUnionById" resultMap="UnionResultMap">
         <include refid="getUnion"/>
@@ -48,7 +44,6 @@
 			 WHERE U.UNION_ID = #{id};
 		]]>
     </select>
-
 
     <select id="getUnionByName" resultMap="UnionResultMap">
         <include refid="getUnion"/>
@@ -68,7 +63,6 @@
             )
 		]]>
     </select>
-
 
     <select id="getAllUnionsByCountry" resultMap="UnionResultMap">
         <![CDATA[
@@ -118,8 +112,6 @@
         <include refid="deleteUnion"/>
     </delete>
 
-
-
     <delete id="deleteUnion">
         <include refid="deleteUnion"/>
         <![CDATA[
@@ -133,10 +125,8 @@
             WHERE
                 UNIONS_ID = #{unionId} AND
                 COUNTRIES_ID = #{countryId}
-
         ]]>
     </delete>
-
 
     <resultMap id="UnionResultMap" type="com.qaprosoft.mybatisExample.model.Union" autoMapping="false">
         <id property="id" column="UNION_ID"/>

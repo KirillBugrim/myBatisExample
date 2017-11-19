@@ -98,10 +98,20 @@ public class Main {
 
 
 
+//        City city = cityService.getCityByName("Minsk");
+//        System.out.println(city);
+//
+//        city.setCityStatus(null);
+//        city.setCityPopulation(1900000);
+//        cityService.updateCity(city);
+//        System.out.println(cityService.getCityById(165));
 
 
 
+        List<Country> countries = countryService.getCountriCountriesWithPopulationAndAreaMore(null, new Long(23000));
 
+        System.out.println(countries);
+        System.out.println(countries.size());
 
     }
 

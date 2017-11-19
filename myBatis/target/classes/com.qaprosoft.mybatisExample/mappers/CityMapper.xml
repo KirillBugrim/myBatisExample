@@ -60,7 +60,7 @@
     <select id="getAllCitiesByCountryName"  resultMap="CityResultMap">
         <![CDATA[
 		SELECT  C.CITY_ID, C.CITY_NAME, C.CITY_POPULATION, C.CITY_STATUS
-		FROM Cities C join COUNTRIES CO
+		FROM Cities C left join COUNTRIES CO
 		on CO.COUNTRY_ID=C.COUNTRIES_ID
         WHERE
         CO.COUNTRY_NAME=#{nameCountry};
