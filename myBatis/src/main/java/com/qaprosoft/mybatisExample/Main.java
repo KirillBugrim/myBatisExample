@@ -34,13 +34,23 @@ public class Main {
 //        unionService.createUnions(unions);
 //
 //
-        Country country = new Country("Filand",242424,42424);
+        Country country = new Country("DENMAFwrRK",242424,42424);
 
         countryService.createCountry(country);
+//
+//        City city = new City("Helsinki",3242424, City.CityStatus.CAPITAL);
 
-        unionService.addCountryToUnion(unionService.getUnionById(3),country);
 
-        System.out.println(unionService.getAllUnionsByCountry(country));
+        List<City> cities = new ArrayList<City>();
+
+
+        for (int i = 0; i <131 ; i++) {
+            cities.add(new City("sfsfsffsfsf"+i,2424, City.CityStatus.CAPITAL));
+        }
+
+        cityService.createCities(cities,country);
+
+
 
 
 

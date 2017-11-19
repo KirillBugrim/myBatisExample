@@ -9,7 +9,7 @@ public interface CityMapper {
 
     void createCity(@Param("city") City city, @Param("countryId") long countryId);
 
-    void createCities(List<City> cities);
+    void createCities(@Param("city") List<City> cities, @Param("countryId") long countryId);
 
     City getCityById(long id);
 

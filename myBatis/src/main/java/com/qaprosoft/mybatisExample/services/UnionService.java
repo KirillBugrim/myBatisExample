@@ -31,6 +31,11 @@ public class UnionService {
       return unionMapper.getUnionById(id);
     }
 
+    @Transactional(readOnly = true)
+    public Union getUnionByName(String name){
+        return unionMapper.getUnionByName(name);
+    }
+
     @Transactional(rollbackFor = Exception.class)
     public void updateUnionById(Union union){
         unionMapper.updateUnionName(union);

@@ -21,8 +21,8 @@ public class CityService {
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public void createCities(List<City> cities){
-        cityMapper.createCities(cities);
+    public void createCities(List<City> cities, Country country){
+        cityMapper.createCities(cities, country.getId());
     }
 
     @Transactional(rollbackFor = Exception.class)

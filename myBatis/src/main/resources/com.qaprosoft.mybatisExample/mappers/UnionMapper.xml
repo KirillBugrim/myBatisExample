@@ -50,6 +50,13 @@
     </select>
 
 
+    <select id="getUnionByName" resultMap="UnionResultMap">
+        <include refid="getUnion"/>
+        <![CDATA[
+			 WHERE U.UNION_NAME = #{name};
+		]]>
+    </select>
+
     <select id="getAllUnionsByCountryName" resultMap="UnionResultMap">
         <![CDATA[
         SELECT U.UNION_ID, U.UNION_NAME from UNIONS U

@@ -17,6 +17,8 @@ public interface UnionMapper {
 
     Union getUnionById(long id);
 
+    Union getUnionByName(String name);
+
     void updateUnionName(Union union);
 
     void deleteUnionById(long id);

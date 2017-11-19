@@ -23,10 +23,10 @@
         <![CDATA[
         insert into world.CITIES (CITY_NAME, CITY_POPULATION, CITY_STATUS, COUNTRIES_ID) values
         ]]>
-        <foreach item="city" collection="list" separator=",">
-            (#{name},
-            #{cityPopulation} ,
-            #{cityStatus},
+        <foreach item="city" collection="city" separator=",">
+            (#{city.name},
+            #{city.cityPopulation} ,
+            #{city.cityStatus},
             #{countryId}
             )
         </foreach>
