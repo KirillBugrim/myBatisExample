@@ -52,6 +52,14 @@
 
 
 
+    <select id="getAllUnionsByCountry" resultMap="UnionResultMap">
+        <![CDATA[
+
+
+		]]>
+    </select>
+
+
 
 
     <update id="updateUnionName">

@@ -23,13 +23,11 @@ public class Main {
         CityService cityService = ctx.getBean(CityService.class);
 
 
+       List<Country> countries = new ArrayList<Country>();
 
-//        countryService.createCountry(new Country("ddsf",32424,4224));
-//        unionService.createUnion(new Union("dsf"));
+        System.out.println(unionService.getUnionById(1));
 
-        System.out.println(countryService.getCountAllCountries());
-        System.out.println(unionService.getCountAllUnoins());
-        System.out.println(cityService.getCountAllCities());
+
 
     }
 

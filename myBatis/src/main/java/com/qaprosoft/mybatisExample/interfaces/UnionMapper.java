@@ -1,5 +1,6 @@
 package com.qaprosoft.mybatisExample.interfaces;
 
+import com.qaprosoft.mybatisExample.model.Country;
 import com.qaprosoft.mybatisExample.model.Union;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
@@ -25,4 +26,6 @@ public interface UnionMapper {
     void addCountry2Union(@Param("unionId") long unionId, @Param("countryId") long countryId);
 
     Long getCountAllUnions();
+
+    List<Union> getAllUnionsByCountry(Country country);
 }
