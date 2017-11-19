@@ -34,11 +34,13 @@ public class Main {
 //        unionService.createUnions(unions);
 //
 //
-//        Country country = new Country("Belarus",242424,42424);
-//
-//        countryService.createCountry(country);
+        Country country = new Country("Filand",242424,42424);
 
-        unionService.addCountryToUnion(2,1);
+        countryService.createCountry(country);
+
+        unionService.addCountryToUnion(unionService.getUnionById(3),country);
+
+        System.out.println(unionService.getAllUnionsByCountry(country));
 
 
 

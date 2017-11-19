@@ -27,5 +27,7 @@ public interface UnionMapper {
 
     Long getCountAllUnions();
 
-    List<Union> getAllUnionsByCountry(Country country);
+    List<Union> getAllUnionsByCountryName(@Param("name") String name);
+
+    List<Union> getAllUnionsByCountry(@Param("country") Country country);
 }

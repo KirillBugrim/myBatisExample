@@ -47,13 +47,23 @@ public class UnionService {
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public void addCountryToUnion(long unionId, long countryId){
-        unionMapper.addCountry2Union(unionId, countryId);
+    public void addCountryToUnion(Union union, Country country){
+        unionMapper.addCountry2Union(union.getId(), country.getId());
     }
 
     @Transactional(readOnly = true)
     public Long getCountAllUnoins(){
         return unionMapper.getCountAllUnions();
+    }
+
+    @Transactional(readOnly = true)
+    public List<Union> getAllUnionsByCountryName(String name){
+        return unionMapper.getAllUnionsByCountryName(name);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Union> getAllUnionsByCountry(Country country){
+        return unionMapper.getAllUnionsByCountry(country);
     }
 
 }

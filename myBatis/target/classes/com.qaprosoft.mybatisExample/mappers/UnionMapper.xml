@@ -3,7 +3,8 @@
 
 <mapper namespace="com.qaprosoft.mybatisExample.interfaces.UnionMapper">
 
-    <insert id="createUnion" parameterType="com.qaprosoft.mybatisExample.model.Union" useGeneratedKeys="true" keyProperty="id">
+    <insert id="createUnion" parameterType="com.qaprosoft.mybatisExample.model.Union" useGeneratedKeys="true"
+            keyProperty="id">
         <![CDATA[
         insert into world.UNIONS (UNION_NAME) values
         (
@@ -13,7 +14,7 @@
     </insert>
 
 
-    <insert id="createUnions" parameterType="com.qaprosoft.mybatisExample.model.Union" useGeneratedKeys="true" >
+    <insert id="createUnions" parameterType="com.qaprosoft.mybatisExample.model.Union" useGeneratedKeys="true">
         <![CDATA[
         insert into world.UNIONS (UNION_NAME) values
         ]]>
@@ -21,7 +22,6 @@
             (#{union.name})
         </foreach>
     </insert>
-
 
 
     <insert id="addCountry2Union" useGeneratedKeys="true">
@@ -35,7 +35,6 @@
     </insert>
 
 
-
     <sql id="getUnion">
         <![CDATA[
         SELECT U.UNION_ID, U.UNION_NAME FROM world.UNIONS U
@@ -44,22 +43,37 @@
 
 
     <select id="getUnionById" resultMap="UnionResultMap">
-        <include refid="getUnion" />
+        <include refid="getUnion"/>
         <![CDATA[
 			 WHERE U.UNION_ID = #{id};
 		]]>
     </select>
 
 
-
-    <select id="getAllUnionsByCountry" resultMap="UnionResultMap">
+    <select id="getAllUnionsByCountryName" resultMap="UnionResultMap">
         <![CDATA[
-
-
+        SELECT U.UNION_ID, U.UNION_NAME from UNIONS U
+        where U.UNION_ID in
+            (SELECT CU.UNIONS_ID
+            from COUNTRIES_UNIONS CU join COUNTRIES C on C.COUNTRY_ID=CU.COUNTRIES_ID
+            WHERE
+            C.COUNTRY_NAME= #{name}
+            )
 		]]>
     </select>
 
 
+    <select id="getAllUnionsByCountry" resultMap="UnionResultMap">
+        <![CDATA[
+        SELECT U.UNION_ID, U.UNION_NAME from UNIONS U
+        where U.UNION_ID in
+            (SELECT CU.UNIONS_ID
+            from COUNTRIES_UNIONS CU join COUNTRIES C on C.COUNTRY_ID=CU.COUNTRIES_ID
+            WHERE
+            C.COUNTRY_ID= #{country.id}
+            )
+		]]>
+    </select>
 
 
     <update id="updateUnionName">
@@ -73,14 +87,11 @@
     </update>
 
 
-    <select id="getCountAllUnions"  resultType="java.lang.Long" >
+    <select id="getCountAllUnions" resultType="java.lang.Long">
         <![CDATA[
 		select count(*) from world.UNIONS
 		]]>
     </select>
-
-
-
 
 
     <sql id="deleteUnion">
