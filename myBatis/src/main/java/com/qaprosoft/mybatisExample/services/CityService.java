@@ -55,4 +55,9 @@ public class CityService {
         return cityMapper.getCountAllCities();
     }
 
+    @Transactional(rollbackFor = Exception.class)
+    public void deleteAllCities () {
+        cityMapper.deleteAllCities();
+    }
+
 }

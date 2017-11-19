@@ -13,6 +13,8 @@ public interface CountryMapper {
 
     Country getCountryById(long id);
 
+    Country getCountryByName(String name);
+
     void updateCountry(Country country);
 
     void deleteCountryById(long id);
@@ -20,5 +22,7 @@ public interface CountryMapper {
     void deleteCountry(Country country);
 
     Long getCountAllCountries();
+
+    void deleteAllCountries();
 
 }

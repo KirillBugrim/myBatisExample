@@ -100,6 +100,10 @@
         ]]>
     </delete>
 
+    <delete id="deleteAllCities">
+        <include refid="deleteCity"/>
+    </delete>
+
     <delete id="deleteCity">
         <include refid="deleteCity"/>
         <![CDATA[
@@ -124,7 +128,6 @@
         <result property="name" column="CITY_NAME"/>
         <result property="cityPopulation" column="CITY_POPULATION"/>
         <result property="cityStatus" column="CITY_STATUS"/>
-        <result property="countryId" column="COUNTRIES_ID"/>
     </resultMap>
 
 </mapper>

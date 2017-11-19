@@ -114,11 +114,27 @@
         ]]>
     </delete>
 
+    <delete id="deleteAllUnions">
+        <include refid="deleteUnion"/>
+    </delete>
+
+
+
     <delete id="deleteUnion">
         <include refid="deleteUnion"/>
         <![CDATA[
         WHERE UNION_NAME = #{name}
          ]]>
+    </delete>
+
+    <delete id="deleteCountryFromUnion">
+        <![CDATA[
+            DELETE FROM world.COUNTRIES_UNIONS
+            WHERE
+                UNIONS_ID = #{unionId} AND
+                COUNTRIES_ID = #{countryId}
+
+        ]]>
     </delete>
 
 

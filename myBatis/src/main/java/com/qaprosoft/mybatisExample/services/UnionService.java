@@ -52,8 +52,18 @@ public class UnionService {
     }
 
     @Transactional(rollbackFor = Exception.class)
+    public void deleteAllUnions(){
+        unionMapper.deleteAllUnions();
+    }
+
+    @Transactional(rollbackFor = Exception.class)
     public void addCountryToUnion(Union union, Country country){
         unionMapper.addCountry2Union(union.getId(), country.getId());
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public void deleteCountryFromUnion(Union union, Country country){
+        unionMapper.deleteCountryFromUnion(union.getId(), country.getId());
     }
 
     @Transactional(readOnly = true)

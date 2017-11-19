@@ -22,4 +22,6 @@ public interface CityMapper {
     void deleteCity(City city);
 
     Long getCountAllCities();
+
+    void deleteAllCities();
 }

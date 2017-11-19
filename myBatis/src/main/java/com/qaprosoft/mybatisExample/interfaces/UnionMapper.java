@@ -10,7 +10,6 @@ import java.util.List;
 
 public interface UnionMapper {
 
-
     void createUnion(Union union);
 
     void createUnions(List<Union> unions);
@@ -27,7 +26,11 @@ public interface UnionMapper {
 
     void addCountry2Union(@Param("unionId") long unionId, @Param("countryId") long countryId);
 
+    void deleteCountryFromUnion(@Param("unionId") long unionId, @Param("countryId") long countryId);
+
     Long getCountAllUnions();
+
+    void deleteAllUnions();
 
     List<Union> getAllUnionsByCountryName(@Param("name") String name);
 
