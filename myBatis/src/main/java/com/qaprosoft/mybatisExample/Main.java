@@ -23,9 +23,23 @@ public class Main {
         CityService cityService = ctx.getBean(CityService.class);
 
 
-       List<Country> countries = new ArrayList<Country>();
+//
+//        Union union = new Union("SNG");
+//        Union union1 = new Union("Tamozhenyi soyuz");
+//
+//
+//        List<Union> unions = new ArrayList<Union>();
+//        unions.add(union);
+//        unions.add(union1);
+//        unionService.createUnions(unions);
+//
+//
+//        Country country = new Country("Belarus",242424,42424);
+//
+//        countryService.createCountry(country);
 
-        System.out.println(unionService.getUnionById(1));
+        unionService.addCountryToUnion(2,1);
+
 
 
 

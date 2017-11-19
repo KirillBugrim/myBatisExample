@@ -26,7 +26,7 @@
 
     <insert id="addCountry2Union" useGeneratedKeys="true">
         <![CDATA[
-            INSERT INTO world.COUNTRIES_UNIONS (COUNTRIES_ID, UNIONS_ID)
+            INSERT INTO world.COUNTRIES_UNIONS (UNIONS_ID, COUNTRIES_ID)
             VALUES (
                 #{unionId},
                 #{countryId}
